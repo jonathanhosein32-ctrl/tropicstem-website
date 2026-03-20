@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About TropicStem Florals</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+
+<div class="container">
+
+<a class="navbar-brand d-flex align-items-center" href="index.html">
+<img src="images/logo.png" alt="TropicStem Logo" class="me-2">
+TropicStem Florals
+</a>
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item dropdown">
+
+<a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+About
+</a>
+
+<ul class="dropdown-menu">
+
+<li>
+<a class="dropdown-item" href="about.html">About Us</a>
+</li>
+
+<li>
+<a class="dropdown-item" href="founder.html">Founder</a>
+</li>
+
+</ul>
+
+</li>
+<li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+<li class="nav-item"><a class="nav-link" href="order.html">Order</a></li>
+<li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+</ul>
+
+</div>
+
+</nav>
+
+<div class="container mt-5">
+
+<h1>About TropicStem Florals</h1>
+
+<div class="video-container mb-3">
+
+<video controls autoplay muted loop class="w-100 rounded">
+
+<source src="videos/flowers.mp4" type="video/mp4">
+
+Your browser does not support the video tag.
+
+</video>
+
+</div>
+
+<p>
+At TropicStem Florals, we believe that flowers are more than just arrangements—they are expressions of emotion, culture, and connection. Founded in Trinidad and Tobago by a passionate young entrepreneur, TropicStem was born from a vision to modernize and elevate the floral industry in a space that had long been overlooked in the digital age. Recognizing the gap between traditional florist services and the convenience of online accessibility, our founder set out to create a seamless experience that blends both worlds.
+</p>
+
+<p>
+Rooted in the vibrant beauty of the Caribbean, TropicStem Florals specializes in fresh, tropical arrangements that reflect the richness and diversity of our island’s natural landscape. Each bouquet is thoughtfully designed by skilled floral specialists who combine artistry with a deep understanding of our customers’ needs, ensuring every arrangement tells its own unique story.
+</p>
+
+<p>
+Our mission is to provide exceptional floral designs while making ordering simple, efficient, and accessible across Trinidad and Tobago. Through our online platform, customers can effortlessly browse our curated collections, place orders with ease, and communicate directly with our team for personalized service. Whether celebrating life’s milestones or expressing heartfelt sentiments, TropicStem Florals is dedicated to delivering beauty, quality, and convenience with every order.
+</p>
+
+<p>
+As we continue to grow, we remain committed to innovation, excellence, and the timeless power of flowers to bring people together.
+</p>
+
+</div>
+
+<footer class="footer mt-5 bg-success text-white pt-4 pb-3">
+
+<div class="container">
+
+<div class="row">
+
+<div class="col-md-4">
+<h5>TropicStem Florals</h5>
+<p>Fresh tropical flowers for every occasion.</p>
+</div>
+
+<div class="col-md-4">
+<h5>Contact</h5>
+<p>Email: info@tropicstemflorals.com</p>
+<p>Phone: (868) 555-1234</p>
+</div>
+
+<div class="col-md-4">
+<h5>Quick Links</h5>
+<ul class="list-unstyled">
+<li><a href="index.html" class="text-white">Home</a></li>
+<li><a href="products.html" class="text-white">Products</a></li>
+<li><a href="order.html" class="text-white">Order</a></li>
+<li><a href="contact.html" class="text-white">Contact</a></li>
+</ul>
+</div>
+
+</div>
+
+<hr class="border-light">
+
+<p class="text-center mb-0">© 2026 TropicStem Florals | Trinidad and Tobago</p>
+
+<div class="text-center mt-3">
+<a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+<a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+</div>
+
+</div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<button id="scrollTopBtn" title="Go to top">
+  <i class="bi bi-arrow-up-circle-fill"></i>
+</button>
+
+<script>
+// Get the button
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+// Show button when user scrolls down 200px
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    scrollTopBtn.style.display = "block";
+  } else {
+    scrollTopBtn.style.display = "none";
+  }
+}
+
+// Scroll to top when button clicked
+scrollTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth" // smooth scrolling
+  });
+});
+</script>
+
+</body>
+
+</html>

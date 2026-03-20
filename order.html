@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Order Flowers</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="images/logo.png" alt="TropicStem Logo" class="me-2">
+      TropicStem Florals
+    </a>
+
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+          About
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="about.html">About Us</a></li>
+          <li><a class="dropdown-item" href="founder.html">Founder</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+      <li class="nav-item"><a class="nav-link active" href="order.html">Order</a></li>
+      <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+      <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Order Flowers 💐</h1>
+
+  <div class="row">
+
+    <!-- Order Form -->
+    <div class="col-md-6">
+      <div class="card p-4 shadow-lg border-0">
+        <form onsubmit="orderMessage(event)">
+
+          <label for="name">Name <span class="text-danger">*</span></label>
+          <input type="text" id="name" class="form-control mb-1" required minlength="2" maxlength="50" placeholder="Enter your full name" oninput="validateForm()">
+          <span id="nameError" class="text-danger small mb-3 d-block"></span>
+
+          <label for="email">Email <span class="text-danger">*</span></label>
+          <input type="email" id="email" class="form-control mb-1" required placeholder="Enter your email" oninput="validateForm()">
+          <span id="emailError" class="text-danger small mb-3 d-block"></span>
+
+          <label for="product">Select Product <span class="text-danger">*</span></label>
+          <select class="form-select mb-1" id="product" required onchange="validateForm()">
+            <option disabled selected>Select a bouquet</option>
+            <option value="120">Tropical Bouquet - $120</option>
+            <option value="250">Wedding Arrangement - $250</option>
+            <option value="180">Corporate Package - $180</option>
+            <option value="150">Funeral & Sympathy - $150</option>
+            <option value="100">Birthday Bouquets - $100</option>
+            <option value="140">Romantic Arrangements - $140</option>
+            <option value="90">Get Well Soon - $90</option>
+            <option value="110">New Baby - $110</option>
+            <option value="95">Graduation - $95</option>
+            <option value="130">Custom Arrangements - $130</option>
+          </select>
+          <span id="productError" class="text-danger small mb-3 d-block"></span>
+
+          <button type="button" id="addCartBtn" class="btn btn-success w-100 mb-2" onclick="addToCart()"> 
+            <i class="bi bi-cart-plus"></i> Add to Cart
+          </button>
+
+          <button type="submit" class="btn btn-dark w-100">
+            <i class="bi bi-bag-check"></i> Checkout
+          </button>
+
+        </form>
+      </div>
+    </div>
+
+    <!-- Cart Display -->
+    <div class="col-md-6">
+      <div class="card p-4 shadow-lg border-0">
+        <h4><i class="bi bi-cart"></i> Your Cart</h4>
+        <ul id="cartList" class="list-group mb-3"></ul>
+        <h5>Total: $<span id="total">0</span></h5>
+        <button class="btn btn-danger w-100" onclick="clearCart()">Clear Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart() {
+    const select = document.getElementById("product");
+    const name = select.options[select.selectedIndex].text;
+    const price = parseInt(select.value);
+
+    if (!price) {
+        alert("Please select a product");
+        return;
+    }
+
+    cart.push({ name, price });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    displayCart();
+}
+
+function displayCart() {
+    const cartList = document.getElementById("cartList");
+    const totalDisplay = document.getElementById("total");
+
+    cartList.innerHTML = "";
+    let total = 0;
+
+    cart.forEach(item => {
+        total += item.price;
+        let li = document.createElement("li");
+        li.className = "list-group-item";
+        li.textContent = item.name;
+        cartList.appendChild(li);
+    });
+
+    totalDisplay.textContent = total;
+}
+
+function clearCart() {
+    cart = [];
+    localStorage.removeItem("cart");
+    displayCart();
+}
+
+// ===== FORM VALIDATION =====
+function validateForm() {
+    let valid = true;
+
+    // Name validation
+    const name = document.getElementById("name").value.trim();
+    const nameError = document.getElementById("nameError");
+    if (name.length < 2) {
+        nameError.textContent = "Name must be at least 2 characters.";
+        valid = false;
+    } else {
+        nameError.textContent = "";
+    }
+
+    // Email validation
+    const email = document.getElementById("email").value.trim();
+    const emailError = document.getElementById("emailError");
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!email.match(emailPattern)) {
+        emailError.textContent = "Enter a valid email address.";
+        valid = false;
+    } else {
+        emailError.textContent = "";
+    }
+
+    // Product validation
+    const product = document.getElementById("product").value;
+    const productError = document.getElementById("productError");
+    if (!product) {
+        productError.textContent = "Please select a product.";
+        valid = false;
+    } else {
+        productError.textContent = "";
+    }
+
+    // Cart validation
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+        valid = false;
+    }
+
+    return valid;
+}
+
+function orderMessage(event) {
+    event.preventDefault();
+    if (validateForm()) {
+        alert("Thank you! Your order has been placed.");
+        clearCart();
+        document.querySelector("form").reset();
+    }
+}
+
+// Load cart on page open
+displayCart();
+</script>
+
+<!-- Footer -->
+<footer class="footer mt-5 bg-success text-white pt-4 pb-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>TropicStem Florals</h5>
+        <p>Fresh tropical flowers for every occasion.</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Contact</h5>
+        <p>Email: info@tropicstemflorals.com</p>
+        <p>Phone: (868) 555-1234</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class="text-white">Home</a></li>
+          <li><a href="products.html" class="text-white">Products</a></li>
+          <li><a href="order.html" class="text-white">Order</a></li>
+          <li><a href="contact.html" class="text-white">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="border-light">
+    <p class="text-center mb-0">© 2026 TropicStem Florals | Trinidad and Tobago</p>
+    <div class="text-center mt-3">
+      <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+      <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+    </div>
+  </div>
+</footer>
+
+<button id="scrollTopBtn" title="Go to top">
+  <i class="bi bi-arrow-up-circle-fill"></i>
+</button>
+
+<script>
+// Get the button
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+// Show button when user scrolls down 200px
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    scrollTopBtn.style.display = "block";
+  } else {
+    scrollTopBtn.style.display = "none";
+  }
+}
+
+// Scroll to top when button clicked
+scrollTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth" // smooth scrolling
+  });
+});
+</script>
+
+</body>
+</html>

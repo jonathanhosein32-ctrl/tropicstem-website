@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="description" content="TropicStem Florals – Tropical flower arrangements in Trinidad and Tobago">
+<meta name="keywords" content="florist Trinidad, tropical flowers, wedding flowers, flower delivery">
+<meta name="author" content="Jonathan Hosein">
+
+<title>TropicStem Florals</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="top-banner">
+Fresh Tropical Flowers Delivered Across Trinidad & Tobago 💐
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+
+<div class="container">
+
+<a class="navbar-brand d-flex align-items-center" href="index.html">
+<img src="images/logo.png" alt="TropicStem Logo" class="me-2">
+TropicStem Florals
+</a>
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item dropdown">
+
+<a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+About
+</a>
+
+<ul class="dropdown-menu">
+
+<li>
+<a class="dropdown-item" href="about.html">About Us</a>
+</li>
+
+<li>
+<a class="dropdown-item" href="founder.html">Founder</a>
+</li>
+
+</ul>
+
+</li>
+<li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+<li class="nav-item"><a class="nav-link" href="order.html">Order</a></li>
+<li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+</ul>
+
+</div>
+
+</nav>
+
+<div id="flowerCarousel" class="carousel slide" data-bs-ride="carousel">
+
+<div class="carousel-inner">
+
+<div class="carousel-item active">
+<img src="images/bouquetone.jpg" class="d-block w-100" alt="Bouquet">
+
+<div class="carousel-caption">
+<h3>Beautiful Tropical Bouquets</h3>
+<p>Perfect for every occasion</p>
+</div>
+
+</div>
+
+<div class="carousel-item">
+<img src="images/bouquettwo.jpg" class="d-block w-100" alt="Wedding flowers">
+
+<div class="carousel-caption">
+<h3>Elegant Wedding Flowers</h3>
+<p>Designed for your special day</p>
+</div>
+
+</div>
+
+<div class="carousel-item">
+<img src="images/bouquetthree.jpg" class="d-block w-100" alt="Corporate flowers">
+
+<div class="carousel-caption">
+<h3>Corporate Floral Designs</h3>
+<p>Professional arrangements for your business</p>
+</div>
+
+</div>
+
+</div>
+
+<button class="carousel-control-prev" type="button" data-bs-target="#flowerCarousel" data-bs-slide="prev">
+<span class="carousel-control-prev-icon"></span>
+</button>
+
+<button class="carousel-control-next" type="button" data-bs-target="#flowerCarousel" data-bs-slide="next">
+<span class="carousel-control-next-icon"></span>
+</button>
+
+</div>
+
+<div class="container text-center mt-5">
+
+<h1>Welcome to TropicStem Florals</h1>
+
+<p>
+TropicStem Florals provides beautiful tropical flower arrangements 
+for weddings, birthdays, anniversaries and corporate events.
+</p>
+
+<img src="images/bouquet.jpg" class="img-fluid" alt="Tropical flower bouquet">
+
+<br><br>
+
+<a href="products.html" class="btn btn-success">Browse Flowers</a>
+
+</div>
+
+<footer class="footer mt-5 bg-success text-white pt-4 pb-3">
+
+<div class="container">
+
+<div class="row">
+
+<div class="col-md-4">
+<h5>TropicStem Florals</h5>
+<p>Fresh tropical flowers for every occasion.</p>
+</div>
+
+<div class="col-md-4">
+<h5>Contact</h5>
+<p>Email: info@tropicstemflorals.com</p>
+<p>Phone: (868) 555-1234</p>
+</div>
+
+<div class="col-md-4">
+<h5>Quick Links</h5>
+<ul class="list-unstyled">
+<li><a href="index.html" class="text-white">Home</a></li>
+<li><a href="products.html" class="text-white">Products</a></li>
+<li><a href="order.html" class="text-white">Order</a></li>
+<li><a href="contact.html" class="text-white">Contact</a></li>
+</ul>
+</div>
+
+</div>
+
+<hr class="border-light">
+
+<p class="text-center mb-0">© 2026 TropicStem Florals | Trinidad and Tobago</p>
+
+<div class="text-center mt-3">
+<a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+<a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+</div>
+
+</div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<button id="scrollTopBtn" title="Go to top">
+  <i class="bi bi-arrow-up-circle-fill"></i>
+</button>
+
+<script>
+// Get the button
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+// Show button when user scrolls down 200px
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    scrollTopBtn.style.display = "block";
+  } else {
+    scrollTopBtn.style.display = "none";
+  }
+}
+
+// Scroll to top when button clicked
+scrollTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth" // smooth scrolling
+  });
+});
+</script>
+
+</body>
+
+</html>

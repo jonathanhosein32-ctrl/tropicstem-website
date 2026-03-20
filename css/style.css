@@ -1,0 +1,277 @@
+/* ================= BASE ================= */
+:root {
+    --primary-green: #2F4F2F;
+    --accent-green: #198754;
+    --soft-green: #9CAF88;
+    --light-bg: #f8fdf9;
+    --text-dark: #1b4332;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    padding-top: 80px;
+}
+
+/* ================= HEADINGS ================= */
+h1 {
+    color: #2e7d32;
+    margin-bottom: 30px;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    background: linear-gradient(90deg, #2F4F2F, #198754);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.navbar-brand img {
+    height: 100px;
+    border-radius: 5px;
+}
+
+/* ================= HERO ================= */
+.hero {
+    background-image: url('../images/hero.jpg');
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-text {
+    background: rgba(0,0,0,0.4);
+    padding: 40px;
+    border-radius: 10px;
+    backdrop-filter: blur(4px); /* subtle premium effect */
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* ================= TOP BANNER ================= */
+.top-banner {
+    background-color: #6B8E6B;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+/* ================= CAROUSEL ================= */
+.carousel img {
+    height: 400px;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    background: rgba(0,0,0,0.5);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* ================= CARDS ================= */
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.card:hover {
+    transform: translateY(-8px); /* softer than before */
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.06); /* more subtle zoom */
+}
+
+.card-title {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* ================= BUTTONS ================= */
+.btn-success {
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-weight: 500;
+    background: linear-gradient(135deg, #198754, #14532d);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #146c43, #0f3d2e);
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    background-color: var(--primary-green);
+    color: white;
+    padding: 40px 0;
+}
+
+.footer a {
+    color: #E3EEDC;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+/* ================= SOCIAL ICONS ================= */
+.social-icon {
+    color: var(--primary-green);
+    font-size: 24px;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--accent-green);
+    transform: scale(1.2);
+}
+
+/* ================= VIDEO ================= */
+.video-container {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* ================= DROPDOWN ================= */
+.dropdown-menu {
+    border-radius: 10px;
+}
+
+.dropdown-item:hover {
+    background-color: var(--accent-green);
+    color: white;
+}
+
+/* ================= FOUNDER IMAGE ================= */
+.founder-img {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.founder-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* ================= CONTAINER ================= */
+.container {
+    margin-top: 80px;
+}
+
+/* ================= PREMIUM FADE-IN ================= */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}/* In your style.css */
+.navbar {
+    padding-top: 0.3rem;   /* default is ~0.5-0.75rem */
+    padding-bottom: 0.3rem;
+}
+
+.navbar-brand img {
+    height: 40px;          /* adjust logo size if needed */
+}@media (max-width: 768px) {
+    .hero {
+        height: 300px;
+    }
+    .hero h1 {
+        font-size: 32px;
+    }
+    .hero p {
+        font-size: 16px;
+    }
+}@media (max-width: 576px) {
+    .card-body {
+        padding: 1rem;
+    }
+}a:focus, button:focus, input:focus, select:focus {
+    outline: 3px solid #198754; /* accent-green */
+    outline-offset: 2px;
+}.navbar-dark .navbar-nav .nav-link.active {
+    color: #ffffff; /* ensures high contrast */
+}#scrollTopBtn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 99;
+  background-color: var(--accent-green);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 12px 16px;
+  font-size: 24px;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+  background-color: var(--primary-green);
+  transform: scale(1.1);
+}
