@@ -129,6 +129,44 @@ for weddings, birthdays, anniversaries and corporate events.
 
 </div>
 
+<!-- TESTIMONIALS SECTION -->
+<div class="container mt-5">
+
+  <h2 class="text-center mb-4 fade-in">What Our Customers Say 💐</h2>
+
+  <div class="row g-4">
+
+    <!-- TESTIMONIAL 1 -->
+    <div class="col-md-4 fade-in">
+      <div class="card p-3 shadow-sm text-center">
+        <img src="images/customer1.jpg" class="rounded-circle mx-auto mb-3" alt="Happy customer" width="100" height="100">
+        <p>"Absolutely beautiful flowers! The service was fast and the bouquet was stunning."</p>
+        <h6>- Sarah M.</h6>
+      </div>
+    </div>
+
+    <!-- TESTIMONIAL 2 -->
+    <div class="col-md-4 fade-in">
+      <div class="card p-3 shadow-sm text-center">
+        <img src="images/customer2.jpg" class="rounded-circle mx-auto mb-3" alt="Wedding client" width="100" height="100">
+        <p>"Perfect for my wedding! Everything was elegant and professionally done."</p>
+        <h6>- David R.</h6>
+      </div>
+    </div>
+
+    <!-- TESTIMONIAL 3 -->
+    <div class="col-md-4 fade-in">
+      <div class="card p-3 shadow-sm text-center">
+        <img src="images/customer3.jpg" class="rounded-circle mx-auto mb-3" alt="Returning customer" width="100" height="100">
+        <p>"Great customer service and fresh flowers every time. Highly recommend!"</p>
+        <h6>- Lisa K.</h6>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
 <footer class="footer mt-5 bg-success text-white pt-4 pb-3">
 
 <div class="container">
@@ -198,6 +236,28 @@ scrollTopBtn.addEventListener("click", () => {
     top: 0,
     behavior: "smooth" // smooth scrolling
   });
+});
+</script>
+
+<script>
+// Fade-in on scroll
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+  threshold: 0.2
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+
+    entry.target.classList.add('show');
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
 });
 </script>
 
